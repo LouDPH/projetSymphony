@@ -5,6 +5,8 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -20,7 +22,7 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class, ['attr' => ['class' => 'form-control'], 'label' => 'E-mail'])
             ->add('lastname', TextType::class, ['attr' => ['class' => 'form-control'],'label' => 'Nom'])
             ->add('firstname', TextType::class, ['attr' => ['class' => 'form-control'],'label' => 'Prenom'])
-            ->add('address', TextType::class, ['attr' => ['class' => 'form-control'],'label' => 'aAdresse'])
+            ->add('address', TextType::class, ['attr' => ['class' => 'form-control'],'label' => 'Adresse'])
             ->add('zipcode', TextType::class, ['attr' => ['class' => 'form-control'],'label' => 'Code postal'])
             ->add('city', TextType::class, ['attr' => ['class' => 'form-control'],'label' => 'Ville'])
             ->add('RGPDConsent', CheckboxType::class, [
@@ -30,7 +32,7 @@ class RegistrationFormType extends AbstractType
                         'message' => 'You should agree to our terms.',
                     ]),
                 ],
-                'label' => "En m\'inscrivant à ce site j\'accepte"
+                'label' => "En m'inscrivant à ce site j'accepte"
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
