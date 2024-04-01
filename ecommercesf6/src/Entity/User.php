@@ -47,7 +47,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $city = null;
 
     #[ORM\Column (options: ['default' => 'CURRENT_TIMESTAMP'])]
-    private ?\DateTimeImmutable $create_at = null;
+    private ?\DateTimeImmutable $create_at;
 
     #[ORM\OneToMany(targetEntity: Order::class, mappedBy: 'user')]
     private Collection $orders;
